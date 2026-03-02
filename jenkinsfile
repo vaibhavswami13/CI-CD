@@ -39,6 +39,12 @@ stage('Checkout Code') {
                 """
             }
         }
+	stage('Run New Container2') {
+            steps {
+                echo "Running New Container2..."
+                sh """
+                docker run -d -p 5001:5001 --name ${CONTAINER_NAME} ${IMAGE_NAME}
+                """
     }
 }
 
