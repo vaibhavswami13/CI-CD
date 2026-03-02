@@ -31,22 +31,15 @@ stage('Checkout Code') {
             }
         }
 
-        stage('Run New Container') {
+        stage('Run Containers') {
             steps {
-                echo "Running New Container..."
+                echo "Running Containers..."
                 sh """
-                docker run -d -p 5000:5000 --name ${CONTAINER_NAME} ${IMAGE_NAME}
+                docker run -d -p 5000:5000 --name app1 ${IMAGE_NAME}
+		docker run -d -p 5001:5000 --name app2 ${IMAGE_NAME}
                 """
             }
         }
-	stage('Run New Container2') {
-            steps {
-                echo "Running New Container2..."
-                sh """
-                docker run -d -p 5001:5001 --name ${CONTAINER_NAME} ${IMAGE_NAME}
-                """
-		}
-	}
     }
 }
 
