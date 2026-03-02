@@ -1,2 +1,2 @@
 def demo():
-  return "welcome to demo1"
+  return "welcome to demo2"
