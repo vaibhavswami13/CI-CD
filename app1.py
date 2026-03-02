@@ -1,2 +1,2 @@
-def demo()
+def demo():
 return "welcome to demo!"
