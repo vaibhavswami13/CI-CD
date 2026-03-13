@@ -34,7 +34,7 @@ stage('Checkout Code') {
             steps {
                 echo "Running Containers..."
                 sh """
-                docker run -d -p 5000:5000 --name app ${IMAGE_NAME)
+                docker run -d -p 5000:5000 --name app ${IMAGE_NAME}
                 """
             }
         }
